@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>ProtectMyRights</title>
+    </head>
+    <body>
+        <div class="app">
+            <h2>ProtectMyRights</h2>
+            <div id="start">
+                <p>Welcome! This is a webapp where you can easily protect your rights as an independent artist.</p>
+                <p>
+                    By continuing, you agree this website is not a legal advice website, and only helps you access outlets to <i>take</i>
+                    legal action.
+                </p>
+                <p>You also agree to this webapp to save this decision to your browser. Nothing is tracked within the app.</p>
+                <div class="scriptOnly">
+                    <button onclick="start();">Get Started</button>
+                </div>
+                <noscript><i>This webapp requires Javascript to be enabled.</i></noscript>
+            </div>
+            <div style="display:none;" id="home">
+                <p>To get started, enter the link of the infriging content.</p>
+                <input id="url" autocomplete="off" placeholder="Put the link here."><button onclick="getLink(document.getElementById('url').value);">Enter</button>
+                
+            </div>
+            <div style="display:none;" id="load">
+                <p>Loading...</p>
+            </div>
+            <div style="display:none;" id="claim">
+                <h3>Warning</h3>
+                <p>By continuing to the link below, you agree you are <i>not</i> submitting a false claim.</p>
+                <p>
+                    You must consider fair use of the use of your work, it is not only illegal, but immoral to submit
+                    false claims.
+                </p>
+                <button id="acceptButton">I will not submit a false claim</button>
+            </div>
+            <div style="display:none;" id="claimAcceptHasLink">
+                <a id="tkLink"><button>Takedown the content</button></a>
+                <p>Thank you for using our service!</p>
+                <button onclick="window.location.reload()">Submit another claim</button>
+            </div>
+            <div style="display:none;" id="unknown">
+                <p>
+                    This site is not supported by default. Is it a common site? <a href="https://github.com/normanlol/protect-my-rights/issues/new">Suggest it here.</a>
+                    If it's not - <a id="whoIs">Go here</a> and find their hosting provider and report the infriging content to them.
+                </p>
+            </div>
+            <p>
+                <a href="#" onclick="localStorage.removeItem('legal');window.location.reload()">Remove my preferences</a> - 
+                <a href="https://github.com/normanlol/protect-my-rights">Source code</a>
+            </p>
+        </div>
+        <script src="/app.js"></script>
+    </body>
+</html>
