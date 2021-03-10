@@ -89,6 +89,15 @@ function getLink(url) {
             document.getElementById("tkLink").href = tk;
         return;
 
+        case "www.deviantart.com":
+        case "deviantart.com":
+            var tk = "https://help.deviantart.com/dmca";
+            document.getElementById("claim").style.display = "";
+            document.getElementById("load").style.display = "none";
+            document.getElementById("acceptButton").onclick = function () { accepted("claimAcceptHasLink"); }
+            document.getElementById("tkLink").href = tk;
+        return;
+
         default:
             document.getElementById("claim").style.display = "";
             document.getElementById("load").style.display = "none";
