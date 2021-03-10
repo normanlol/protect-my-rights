@@ -98,6 +98,15 @@ function getLink(url) {
             document.getElementById("tkLink").href = tk;
         return;
 
+        case "soundcloud.com":
+        case "www.soundcloud.com": 
+            var tk = "https://soundcloud.com/pages/copyright/report/form";
+            document.getElementById("claim").style.display = "";
+            document.getElementById("load").style.display = "none";
+            document.getElementById("acceptButton").onclick = function () { accepted("claimAcceptHasLink"); }
+            document.getElementById("tkLink").href = tk;
+        return;
+
         default:
             document.getElementById("claim").style.display = "";
             document.getElementById("load").style.display = "none";
